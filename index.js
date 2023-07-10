@@ -40,8 +40,14 @@ app.post('/upload', upload.single('image'), (req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(port, () => {
-  console.log(`La aplicación está funcionando en http://localhost:${port}`);
-});
+const PORT = process.env.PORT || 3000 ;
+
+//app.listen(port,()=>{
+   // console.log(`funcionando en el puerto ${port}`);
+//});
+
+
+app.listen(PORT)
+console.log('funcionando on port',PORT)
 
 
