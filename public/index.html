@@ -13,24 +13,8 @@
     <button type="submit">Subir</button>
   </form>
 
-  <script>
-    // Obtener la imagen
-    var image = document.querySelector('.uploaded-image');
-
-    // Obtener la ruta de la imagen
-    var imagePath = image.getAttribute('src');
-
-    // Obtener el nombre del archivo de la ruta
-    var fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
-
-    // Mostrar el nombre de la imagen en la consola
-    console.log('Nombre de la imagen:', fileName);
-
-    // Mostrar el nombre de la imagen en la pantalla
-    var fileNameElement = document.createElement('p');
-    fileNameElement.textContent = 'Nombre de la imagen: ' + fileName;
-    document.body.appendChild(fileNameElement);
-  </script>
+  <h2>Imagen subidas:</h2>
+  <img class="" src="uploads/" alt="Imagen subida">
   
   
 </body>
