@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
+  <link href="/tailwind.css" rel="stylesheet">
   <title>Subir imagen</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
   </form>
 
   <h2>Imágenes subidas:</h2>
-<div id="image-list"></div>
+<div id="image-list" class="max-width: 10%"></div>
 
 <script>
   fetch('/images')
