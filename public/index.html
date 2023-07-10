@@ -13,8 +13,27 @@
     <button type="submit">Subir</button>
   </form>
 
-  <h2>Imagen subidas:</h2>
-  <img class="" src="uploads/" alt="Imagen subida">
+  <h2>Imágenes subidas:</h2>
+<div id="image-list"></div>
+
+<script>
+  fetch('/images')
+    .then(response => response.json())
+    .then(images => {
+      const imageList = document.getElementById('image-list');
+
+      images.forEach(image => {
+        const imgElement = document.createElement('img');
+        imgElement.src = 'uploads/' + image;
+        imgElement.alt = 'Imagen subida';
+        imageList.appendChild(imgElement);
+      });
+    })
+    .catch(error => {
+      console.error('Error al obtener el listado de imágenes:', error);
+    });
+</script>
+
   
   
 </body>
