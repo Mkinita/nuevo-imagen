@@ -81,13 +81,18 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Ruta principal
+app.get('/imagenes', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'imagenes.html'));
+});
+
 // Ruta para manejar la carga de archivos
 app.post('/upload', upload.single('image'), (req, res) => {
   if (!req.file) {
     return res.status(400).send('No se ha proporcionado una imagen.');
   }
 
-  res.send('¡Imagen subida correctamente!');
+  res.redirect('https://app-prevencion-agr-production.up.railway.app');
 });
 
 // Ruta para mostrar el listado de imágenes

@@ -8,31 +8,23 @@
   <title>Subir imagen</title>
 </head>
 <body>
-  <h1>Subir imagen</h1>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
-    <input type="file" name="image">
-    <button type="submit">Subir</button>
-  </form>
+  <div class="titulo">
+    <h1>Subir imagen</h1>
+  </div>
+  <div class="imagen">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input  type="file" name="image">
+      <div class="salto"></div>
+      <div class="boton">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
 
-  <h2>Imágenes subidas:</h2>
-<div id="image-list" class="max-width: 10%"></div>
+ 
 
 <script>
-  fetch('/images')
-    .then(response => response.json())
-    .then(images => {
-      const imageList = document.getElementById('image-list');
-
-      images.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.src = 'uploads/' + image;
-        imgElement.alt = 'Imagen subida';
-        imageList.appendChild(imgElement);
-      });
-    })
-    .catch(error => {
-      console.error('Error al obtener el listado de imágenes:', error);
-    });
+  
 </script>
 
   
