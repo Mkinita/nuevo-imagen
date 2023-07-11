@@ -92,7 +92,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
     return res.status(400).send('No se ha proporcionado una imagen.');
   }
 
-  res.redirect('https://app-prevencion-agr-production.up.railway.app');
+  res.redirect('https://app-prevencion-agr-production.up.railway.app/notificacion');
 });
 
 // Ruta para mostrar el listado de imágenes

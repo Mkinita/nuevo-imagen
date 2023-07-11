@@ -11,7 +11,7 @@
   <div class="titulo">
     <h1>Subir imagen</h1>
   </div>
-  <div class="imagen">
+  <!-- <div class="imagen">
     <form action="/upload" method="POST" enctype="multipart/form-data">
       <input  type="file" name="image">
       <div class="salto"></div>
@@ -19,13 +19,72 @@
         <button type="submit">Enviar</button>
       </div>
     </form>
+  </div> -->
+
+
+  <!-- <div class="imagen">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" id="imageInput">
+      <div class="salto"></div>
+      <div class="imagens">
+        <img src="" alt="Miniatura de imagen" id="imagePreview">
+      </div>
+      <div class="boton">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+    
+  </div> -->
+
+
+  <div class="imagen">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="imageInput">
+        <span>Seleccionar imagen</span>
+        <input type="file" name="image" id="imageInput">
+      </label>
+      <div class="imagens">
+        <img src="" alt="Miniatura de imagen" id="imagePreview">
+      </div>
+      <div class="boton">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
   </div>
+  
+  
 
  
 
-<script>
+  <script>
+    // Obtener elementos del DOM
+    const imageInput = document.getElementById('imageInput');
+    const imagePreview = document.getElementById('imagePreview');
   
-</script>
+    // Ocultar la miniatura inicialmente
+    imagePreview.style.display = 'none';
+  
+    // Agregar un evento change al input de imagen
+    imageInput.addEventListener('change', function() {
+      const file = imageInput.files[0]; // Obtener el archivo seleccionado
+      const reader = new FileReader(); // Crear un objeto FileReader
+  
+      reader.onload = function(e) {
+        // Mostrar la miniatura de la imagen
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block'; // Mostrar la miniatura
+      }
+  
+      // Leer el archivo como URL de datos
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        imagePreview.style.display = 'none'; // Ocultar la miniatura si no hay archivo seleccionado
+      }
+    });
+  </script>
+  
+  
 
   
   
